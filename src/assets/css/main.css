@@ -1475,6 +1475,8 @@ ul#nav li.current a {
 .popup-modal:target {
   opacity: 1;
   pointer-events: auto;
+  position: absolute;
+  left: 30.9%;
 }
 
 .popup-modal > div {

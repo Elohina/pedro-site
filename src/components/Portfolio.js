@@ -189,7 +189,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -214,7 +214,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -239,7 +239,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -264,7 +264,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -289,7 +289,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -314,7 +314,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -339,7 +339,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
 
@@ -364,7 +364,7 @@ const Portfolio = () => (
 
         <div className="link-box">
           <a href="http://www.behance.net">Details</a>
-          <a className="popup-modal-dismiss">Close</a>
+          <a href="#portfolio" className="popup-modal-dismiss">Close</a>
         </div>
       </div>
     </div>

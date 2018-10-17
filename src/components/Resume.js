@@ -6,8 +6,8 @@ import Skills from "./Skills";
 
 const Resume = () => (
   <section id="resume">
-    <Education />
-    <Work />
+    {/* <Education />
+    <Work /> */}
     <Skills />
   </section>
 );

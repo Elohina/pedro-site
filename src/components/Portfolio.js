@@ -1,14 +1,15 @@
 import React from "react";
 import { FaPlus, FaTag } from "react-icons/lib/fa";
 
-import Coffee from "../assets/images/portfolio/coffee.jpg";
-import Console from "../assets/images/portfolio/console.jpg";
-import Judah from "../assets/images/portfolio/judah.jpg";
-import IntoTheLight from "../assets/images/portfolio/into-the-light.jpg";
-import Farmerboy from "../assets/images/portfolio/farmerboy.jpg";
-import Girl from "../assets/images/portfolio/girl.jpg";
-import Origami from "../assets/images/portfolio/origami.jpg";
-import Retrocam from "../assets/images/portfolio/retrocam.jpg";
+import Coffee from "../assets/images/portfolio/debiphone.png";
+import Console from "../assets/images/portfolio/roloegol.png";
+import Judah from "../assets/images/portfolio/thejetmanager.jpg";
+import IntoTheLight from "../assets/images/portfolio/wuelto2.png";
+import Farmerboy from "../assets/images/portfolio/bellclick.jpg";
+import Girl from "../assets/images/portfolio/bellbanking2.png";
+import Origami from "../assets/images/portfolio/bellchat.png";
+import Retrocam from "../assets/images/portfolio/prestamos_bellnomina.png";
+import Hidromovil from "../assets/images/portfolio/hidromovil.png";
 
 import CoffeeModal from "../assets/images/portfolio/modals/m-coffee.jpg";
 import ConsoleModal from "../assets/images/portfolio/modals/m-console.jpg";
@@ -156,6 +157,23 @@ const Portfolio = () => (
                 <div className="overlay">
                   <div className="portfolio-item-meta">
                     <h5>Retrocam</h5>
+                    <p>Web Development</p>
+                  </div>
+                </div>
+                <div className="link-icon">
+                  <FaPlus />
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div className="columns portfolio-item">
+            <div className="item-wrap">
+              <a href="#modal-08" title="">
+                <img alt="" src={Hidromovil} />
+                <div className="overlay">
+                  <div className="portfolio-item-meta">
+                    <h5>Hidromovil</h5>
                     <p>Web Development</p>
                   </div>
                 </div>

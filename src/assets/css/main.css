@@ -1018,6 +1018,7 @@ ul#nav li.current a {
   padding-top: 96px;
   padding-bottom: 66px;
   overflow: hidden;
+  text-align: center;
 }
 
 #about a,

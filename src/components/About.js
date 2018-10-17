@@ -6,10 +6,10 @@ import profilePic from "../assets/images/profilepic.jpg";
 const About = () => (
   <section id="about">
     <div className="row">
-      <div className="three columns">
+      {/* <div className="three columns">
         <img className="profile-pic" src={profilePic} alt="" />
-      </div>
-      <div className="nine columns main-col">
+      </div> */}
+      <div className="main-col">
         <h2>About Me</h2>
         <p>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -23,15 +23,9 @@ const About = () => (
           aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
           exercitationem ullam corporis suscipit laboriosam.
         </p>
-        <div className="row">
-          <div className="columns download">
-            <p>
-              <a href="#" className="button">
-                <FaCloudDownload /> Download Resume
-              </a>
-            </p>
-          </div>
-        </div>
+        <a href="#" className="button">
+          <FaCloudDownload /> Download Resume
+        </a>
       </div>
     </div>
   </section>

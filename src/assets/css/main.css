@@ -1131,7 +1131,14 @@ ul#nav li.current a {
 
 #resume .devicon-git-plain {
   max-width: 10em;
+  margin: auto;
 }
+
+#resume .skill h2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/

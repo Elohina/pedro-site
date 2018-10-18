@@ -6,9 +6,13 @@ const Footer = () => (
   <footer id="footer">
     <div className="row">
       <div className="twelve columns">
+        <div className="">
+          <h2>Pedro Luis Valdivieso</h2>
+          <h3><a href="mailto:pedro.valdivieso@gmail.com">pedro.valdivieso@gmail.com</a></h3>
+        </div>
         <SocialLinks />
 
-        <ul className="copyright">
+        {/* <ul className="copyright">
           <li>&copy; Copyright 2018 CeeVee</li>
           <li>
             Design by{" "}
@@ -20,7 +24,7 @@ const Footer = () => (
             Developed in React ⚛️ by{" "}
             <a href="http://www.amanhimself.me">Aman Mittal</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
 
       <div id="go-top">

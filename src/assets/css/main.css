@@ -2127,7 +2127,7 @@ footer .social li:first-child {
    width: 48px;
   height: 48px;
   text-align: left;
-  background-color: #CC5200;
+  background-color: rgba(0,0,0,0.45);
   position: relative;
     border: none;
     float: right;
@@ -2202,11 +2202,20 @@ footer .social li:first-child {
 
  /* Header Styles
  -------------------------------------------------------------------- */
+ header {
+  background-size: contain !important;
+  -webkit-background-size: contain !important;
+  height: 530px;
+ }
  header .banner {
     padding-bottom: 12px;
     padding-top: 6px;
  }
- header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; }
+ header .banner-text {
+  margin-top: 90%;
+  background: unset;
+ }
+ header .banner-text h1 { font: 68px/1.1em Raleway, sans-serif; }
  header .banner-text h3 {
     font: 16px/1.9em 'Open Sans', sans-serif;
     width: 85%;
@@ -2364,6 +2373,10 @@ footer .social li:first-child {
 
  /* header styles
  -------------------------------------------------------------------- */
+ header {
+  background-size: contain !important;
+  -webkit-background-size: contain !important;
+ }
  header .banner { padding-top: 24px; }
  header .banner-text h1 {
     font: 20px/1.1em 'opensans-bold', sans-serif;

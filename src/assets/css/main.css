@@ -973,6 +973,7 @@ header .scrolldown a:hover {
 ul#nav {
   min-height: 48px;
   width: auto;
+  background-color: rgba(0, 0, 0, .45);
 
   /* center align the menu */
   text-align: center;

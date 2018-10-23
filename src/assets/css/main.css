@@ -1033,7 +1033,7 @@ ul#nav li.current a {
 
 #about h2 {
   font: 22px/30px 'Raleway', sans-serif;
-  color: #fff;
+  color: #313131;
   margin-bottom: 12px;
 }
 #about p {
@@ -1471,7 +1471,6 @@ ul#nav li.current a {
 }
 .popup-modal .link-box {
   padding: 18px 36px;
-  /* background: #111; */
   text-align: left;
 }
 .popup-modal .link-box a {
@@ -1479,6 +1478,7 @@ ul#nav li.current a {
   font: 11px/21px 'Raleway', sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
+  margin: 10px;
   cursor: pointer;
 }
 .popup-modal a:hover {
@@ -2385,7 +2385,7 @@ footer .social li:first-child {
  }
  header .banner { padding-top: 24px; }
  header .banner-text h1 {
-    font: 20px/1.1em 'opensans-bold', sans-serif;
+    font: 30px/1.1em 'opensans-bold', sans-serif;
     margin: 0 auto 24px auto;
  }
  header .banner-text h3 {

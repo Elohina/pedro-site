@@ -16,7 +16,7 @@ class Navigation extends React.Component {
     })
   }
   render() {
-    const { pathname = '' } = this.state
+    const { pathname = '' } = this.state;
     return (
     <nav id="nav-wrap">
       <a className="mobile-btn" href="#nav-wrap" />

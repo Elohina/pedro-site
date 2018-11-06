@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 
 import "../assets/css/main.css";
+import "../assets/css/avatar.scss";
 
 import Header from "../components/Header";
 import About from "../components/About";

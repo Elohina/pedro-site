@@ -1126,7 +1126,6 @@ ul#nav li.current a {
   margin-left: 5px;
 }
 #resume .date {
-
   margin-top: 6px;
 }
 
@@ -1138,6 +1137,8 @@ ul#nav li.current a {
 #resume .skill h2 {
   margin: 0 auto;
   text-align: center;
+  font: 22px/30px 'Raleway', sans-serif;
+  margin-bottom: 35px;
 }
 
 /*----------------------------------------------*/
@@ -1328,7 +1329,14 @@ ul#nav li.current a {
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 48px;
-  color: #95a3a3;
+  color: #313131;
+}
+
+#portfolio h2 {
+  font: 22px/30px 'Raleway', sans-serif;
+  color: #313131;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 /* Portfolio Content */
@@ -1941,7 +1949,8 @@ footer a:visited {
   color: #525252;
 }
 footer a:hover,
-footer a:focus {
+footer a:focus,
+footer h2 {
   color: #fff;
 }
 

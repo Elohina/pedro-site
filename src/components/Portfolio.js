@@ -196,18 +196,16 @@ class Portfolio extends React.Component {
     }
     return (
       <div>
-        <ScrollableAnchor id={'portfolio'}>
           <section id="portfolio">
             <div className="row">
               <div className="twelve columns collapsed">
-                <h1>Check Out Some of My Works.</h1>
+                <h2>Check out some of my works</h2>
                 <div id="portfolio-wrapper" className="bgrid-thirds s-bgrid-thirds cf">
                   { worksList }
                 </div>
               </div>
             </div>
           </section>
-        </ScrollableAnchor>
         { modal }
       </div>
     )

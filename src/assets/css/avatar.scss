@@ -1,0 +1,272 @@
+/* Pedro */
+
+$skin: #F0BEAF;
+$grey: #424B54;
+$pink: #F6828C;
+$blonde: #a38054;
+$brown: #4a3d2c;
+
+@mixin border($b) {
+  border-radius: $b;
+  -webkit-border-radius: $b;
+  -moz-border-radius: $b;
+}
+
+.face,
+.hair,
+.nose,
+.ear,
+.neck,
+.body,
+.cape,
+.logo,
+.group,
+.fringe,
+.eyebrow,
+.eyeslash,
+.eye,
+.blush,
+.profile-card,
+.yes,
+.no,
+.info,
+.tongue,
+.profile-wrap,
+.name,
+.mouth {
+  position: absolute;
+}
+
+.container-boy {
+  margin: auto;
+  width: 220px;
+  height: 220px;
+  position: relative;
+  transform: scale(1.4);
+}
+
+.face {
+  @include border(100px);
+  z-index: 20;
+  top: 50px;
+  left: 72px;
+  width: 80px;
+  height: 100px;
+  background: #F0BEAF;
+}
+
+.boy .face {
+  border: 2px solid #424B54;
+  border-bottom-width: 7px;
+  width: 90px;
+  height: 110px;
+}
+
+.boy .hair {
+  z-index: 3;
+  top: 38px;
+  left: 64px;
+  width: 105px;
+  height: 100px;
+  @include border(100%);
+  background: $grey;
+}
+
+.ear {
+  z-index: 3;
+  top: 91px;
+  left: 66px;
+  width: 30px;
+  height: 30px;
+  @include border(100%);
+  background: $skin;
+  &:before {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    content: '';
+    width: 23px;
+    height: 20px;
+    @include border(100%);
+    background: #ED8A80;
+  }
+}
+
+.ear.right {
+  left: 139px;
+}
+
+.boy .fringe {
+  z-index: 99;
+  top: 40px;
+  left: 78px;
+  width: 70px;
+  height: 35px;
+  background: $grey;
+  border-radius: 100% 0 100% 100%;
+}
+
+.eyebrow {
+  z-index: 30;
+  top: 86px;
+  left: 85px;
+  width: 12px;
+  height: 3px;
+  background: #646B73;
+  @include border(3px);
+  &:before {
+    position: absolute;
+    content: '';
+    left: 50px;
+    width: 12px;
+    height: 3px;
+    background: #646B73;
+    @include border(3px);
+  }
+}
+
+.eye {
+  z-index: 30;
+  top: 93px;
+  left: 85px;
+  width: 10px;
+  height: 10px;
+  background: $grey;
+  @include border(100%);
+  &:before {
+    position: absolute;
+    content: '';
+    left: 50px;
+    width: 10px;
+    height: 10px;
+    background: #424B54;
+    @include border(100%);
+  }
+}
+
+.nose {
+  z-index: 20;
+  top: 100px;
+  left: 112px;
+  width: 8px;
+  height: 14px;
+  background: #DB9B99;
+  @include border(100px);
+}
+
+.mouth {
+  z-index: 20;
+  top: 120px;
+  left: 100px;
+  width: 30px;
+  height: 15px;
+  border-radius: 0 0 100px 100px;
+  background: #424B54;
+  overflow: hidden;
+}
+
+.tongue {
+  top: 5px;
+  left: 8px;
+  width: 30px;
+  height: 20px;
+  background: $pink;
+  @include border(100%);
+}
+
+/* Elohina */
+
+.girl .blush {
+  z-index: 95;
+  top: 109px;
+  left: 82px;
+  width: 10px;
+  height: 7px;
+  background: #E3879E;
+  @include border(100%);
+  opacity: 0.4;
+  &:before{
+    position: absolute;
+    content: '';
+    left: 58px;
+    width: 10px;
+  height: 7px;
+  background: #E3879E;
+  @include border(100%);
+
+  }
+}
+
+.girl .hair {
+  z-index: 3;
+  top: 30px;
+  left: 50px;
+  width: 120px;
+  height: 150px;
+  border-radius: 100px 100px 20px 80px;
+  background: $blonde;
+}
+
+.girl .eyebrow, .girl .eyebrow::before, .girl .eye, .girl .eye::before {
+  background: $brown;
+}
+
+.girl .fringe {
+    position: absolute;
+    content: '';
+    z-index: 96;
+    top: 32px;
+    left: 90px;
+    width: 60px;
+    height: 50px;
+    background: $blonde;
+    border-radius: 0px 100px 0 100px;
+    transform: rotate(-5deg);
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: 96;
+      top: 60px;
+      left: 39px;
+      width: 50px;
+      height: 23px;
+      background: $blonde;
+      border-radius: 100px 0px 100px 0px;
+      transform: rotate(100deg);
+    }
+
+  &::after {
+      position: absolute;
+      content: '';
+      z-index: 96;
+      top: 27px;
+      right: 50px;
+      width: 50px;
+      height: 25px;
+      background: $blonde;
+      border-radius: 100px 0px 100px 0px;
+      transform: rotate(150deg);
+    }
+  }
+
+.girl .eyeslash {
+  z-index: 40;
+  top: 95px;
+  left: 82px;
+  width: 8px;
+  height: 2px;
+  background: $brown;
+  @include border(3px);
+  transform: rotate(-25deg);
+  &::before {
+    position: absolute;
+    content: '';
+    left: 53px;
+    width: 8px;
+    top: 26px;
+    height: 2px;
+    transform: rotate(52deg);
+    background: $brown;
+    @include border(3px);
+  }
+}

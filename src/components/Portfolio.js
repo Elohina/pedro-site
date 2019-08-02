@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ReactNativeSVG } from "./SVGIcons";
+
 import Debiphone from "../assets/images/portfolio/debiphone.png";
 import TheJetManager from "../assets/images/portfolio/thejetmanager.jpg";
 import Wuelto from "../assets/images/portfolio/wuelto2.png";
@@ -27,7 +29,8 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/gb/app/hidrom%C3%B3vil/id1294019966?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=es.inorca.hidromovil",
           url: "https://itunes.apple.com/gb/app/hidrom%C3%B3vil/id1294019966?mt=8",
-          images: [Hidromovil1, Hidromovil2]
+          images: [Hidromovil1, Hidromovil2],
+          tech_icons: [<ReactNativeSVG />]
         },
         {
           id: 'bellnomina',
@@ -38,7 +41,8 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellnomina",
           url: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
-          images: [Bellnomina]
+          images: [Bellnomina],
+          tech_icons: [<ReactNativeSVG />]
         },
         {
           id: 'bellclick',
@@ -49,7 +53,8 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellclick",
           url: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
-          images: [Bellclick]
+          images: [Bellclick],
+
         },
         {
           id: 'bellbank',
@@ -142,7 +147,9 @@ class Portfolio extends React.Component {
                           <h2>{element.name}</h2>
                           <p>{element.brief_description}</p>
                           <p>{element.description}</p>
-                          <p>{element.key_words}</p>
+                          <div className="portfolio-item-techs">
+                            {element.tech_icons && element.tech_icons[0]}
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -1401,13 +1401,13 @@ ul#nav li.current a {
 .portfolio-item .item-wrap img {
   vertical-align: bottom;
   border-radius: 5px 5px 0 0;
-  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); */
   height: 450px;
   margin: 0 5px;
 }
 .portfolio-item .item-wrap .portfolio-item-meta {
   padding: 18px;
   margin: 30px auto;
+  width: 60%;
 }
 
 #portfolio .portfolio-item .item-wrap .portfolio-item-meta h2 {
@@ -1422,6 +1422,10 @@ ul#nav li.current a {
   color: #191919;
 }
 
+.portfolio-item .item-wrap .portfolio-item-meta .portfolio-item-techs {
+  max-width: 3em;
+  margin: 0 auto;
+}
 /* on hover */
 .portfolio-item:hover .overlay {
   opacity: 1;
@@ -2283,7 +2287,9 @@ footer .social li:first-child {
  /* Portfolio Section
  /* ----------------------------------------------------------------- */
  #portfolio-wrapper .columns { margin-bottom: 40px; }
- .popup-modal {	max-width: 60%; }
+ #portfolio .item-wrap img {
+  height: 300px;
+ }
 
 
  /* Testimonials Section

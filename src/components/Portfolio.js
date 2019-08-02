@@ -1,7 +1,4 @@
 import React from "react";
-import { FaPlus, FaTag } from "react-icons/lib/fa";
-import ScrollableAnchor from "react-scrollable-anchor";
-import Modal from "react-modal";
 
 import Debiphone from "../assets/images/portfolio/debiphone.png";
 import TheJetManager from "../assets/images/portfolio/thejetmanager.jpg";
@@ -10,17 +7,8 @@ import Bellbanking from "../assets/images/portfolio/bellbanking2.png";
 import Bellclick from "../assets/images/portfolio/bellclick.jpg"
 import Bellchat from "../assets/images/portfolio/bellchat.png";
 import Bellnomina from "../assets/images/portfolio/prestamos_bellnomina3.png";
-import Hidromovil from "../assets/images/portfolio/hidromovil.png";
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+import Hidromovil1 from "../assets/images/portfolio/hidromovil1.jpg";
+import Hidromovil2 from "../assets/images/portfolio/hidromovil2.jpg";
 
 class Portfolio extends React.Component {
 
@@ -39,7 +27,7 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/gb/app/hidrom%C3%B3vil/id1294019966?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=es.inorca.hidromovil",
           url: "https://itunes.apple.com/gb/app/hidrom%C3%B3vil/id1294019966?mt=8",
-          image: Hidromovil
+          images: [Hidromovil1, Hidromovil2]
         },
         {
           id: 'bellnomina',
@@ -50,7 +38,7 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellnomina",
           url: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
-          image: Bellnomina
+          images: [Bellnomina]
         },
         {
           id: 'bellclick',
@@ -61,7 +49,7 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellclick",
           url: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
-          image: Bellclick
+          images: [Bellclick]
         },
         {
           id: 'bellbank',
@@ -72,7 +60,7 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellbanking",
           url: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
-          image: Bellbanking
+          images: [Bellbanking]
         },
         {
           id: 'bellchat',
@@ -80,7 +68,7 @@ class Portfolio extends React.Component {
           name: "Bellchat",
           key_words: "Swift",
           description: "Bellchat is a telecommunications app that provides chat connections to the bank executives",
-          image: Bellchat
+          images: [Bellchat]
         },
         {
           id: 'wuelto',
@@ -88,7 +76,7 @@ class Portfolio extends React.Component {
           name: "Wuelto",
           key_words: "Objective-C",
           description: "Wuelto is a marketplace-oriented app that includes more of a social aspect for example including features such as friends and group gifts",
-          image: Wuelto
+          images: [Wuelto]
         },
         {
           id: 'thejetmanager',
@@ -96,7 +84,7 @@ class Portfolio extends React.Component {
           name: "The Jet Manager",
           key_words: "Titanium, Appcelerator",
           description: "The Jet Manager is an app made for flight attendants and administrators to provide some in-flight services and keep track of some of the airplane metrics like fuel consumptions",
-          image: TheJetManager
+          images: [TheJetManager]
         },
         {
           id: 'debiphone',
@@ -104,35 +92,11 @@ class Portfolio extends React.Component {
           name: "Debiphone",
           key_words: "Titanium, Appcelerator",
           description: "Debiphone is a mobile wallet from which you can make online payments and transfers",
-          image: Debiphone
+          images: [Debiphone]
         },
       ]
     };
 
-  }
-
-  getWorks() {
-    const works = this.state.works;
-    return works.map((element) => {
-      return (
-        <div className="columns portfolio-item">
-          <div className="item-wrap">
-            <a title="" onClick={this.toggleModal(element)}>
-              <img alt="" className="item-image" src={element.image} />
-              <div className="overlay">
-                <div className="portfolio-item-meta">
-                  <h5>{element.name}</h5>
-                  <p>{element.brief_description}</p>
-                </div>
-              </div>
-              <div className="link-icon">
-                <FaPlus />
-              </div>
-            </a>
-          </div>
-        </div>
-      );
-    });
   }
 
   toggleModal = key => event => {
@@ -158,55 +122,35 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    const worksList = this.getWorks();
-    const {isOpen, currentModal} = this.state;
-    let modal;
-    if (currentModal) {
-      modal = <Modal
-        ref={currentModal.id}
-        id={currentModal.id}
-        style={customStyles}
-        closeTimeoutMS={150}
-        contentLabel={currentModal.name}
-        isOpen={isOpen}
-        shouldCloseOnOverlayClick={true}>
-          <div id={'#'+currentModal.id} className="popup-modal">
-            <img
-              src={currentModal.image}
-              alt=""
-            />
-
-            <div className="description-box">
-              <h4>{currentModal.name}</h4>
-              <p>
-                {currentModal.description}
-              </p>
-              <span className="categories">
-                <FaTag /> {currentModal.key_words}
-              </span>
-            </div>
-            <div className="link-box">
-              {currentModal.url &&
-                <a href={currentModal.url} target="_blank" rel="noopener">Details</a>
-              }
-              <a onClick={this.handleModalCloseRequest}>Close</a>
-            </div>
-          </div>
-      </Modal>;
-    }
+    const { works } = this.state;
     return (
       <div>
           <section id="portfolio">
             <div className="row">
               <div className="twelve columns collapsed">
-                <h2>Check out some of my works</h2>
-                <div id="portfolio-wrapper" className="bgrid-thirds s-bgrid-thirds cf">
-                  { worksList }
+                <div className="portfolio-title">
+                  <h2>Check out some of my works</h2>
+                </div>
+                <div id="portfolio-wrapper" className="">
+                  { works.map((element) => (
+                    <div className="portfolio-item" key={element.id}>
+                      <div className="item-wrap">
+                        { element.images.map((image, key) => (
+                          <img alt="" className="item-image" src={image} key={key}/>
+                        ))}
+                        <div className="portfolio-item-meta">
+                          <h2>{element.name}</h2>
+                          <p>{element.brief_description}</p>
+                          <p>{element.description}</p>
+                          <p>{element.key_words}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
-        { modal }
       </div>
     )
   }

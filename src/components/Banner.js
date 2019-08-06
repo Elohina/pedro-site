@@ -1,13 +1,17 @@
 import React from "react";
 import SocialLinks from "./SocialLinks";
+import image from "../assets/images/header-background.png";
 
 const Banner = () => (
   <div className="row banner">
-    <div className="seven columns"></div>
-    <div className="five columns banner-text headline-container">
+    <div className="six columns headline-image">
+      <img src={image} alt="Photo of Pedro"/>
+    </div>
+    <div className="six columns banner-text headline-container">
       <h1 className="responsive-headline">Hi, I'm Pedro.</h1>
-      <h3>
-        Mobile developer / AWS expert / Big Data enthusiast
+      <h2>Mobile developer</h2>
+      <h2>AWS expert</h2>
+      <h2>Big Data enthusiast</h2>
         {/* I'm a Dublin based <span>mobile developer</span> and <span>AWS expert</span> creating awesome
         and effective visual identities for companies of all sizes around the
         globe. Let's */}
@@ -20,7 +24,6 @@ const Banner = () => (
           {" "}
           about me
         </a>. */}
-      </h3>
       <hr />
       <SocialLinks />
     </div>

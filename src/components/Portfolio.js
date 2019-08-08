@@ -12,6 +12,9 @@ import Bellnomina from "../assets/images/portfolio/prestamos_bellnomina3.png";
 import Hidromovil1 from "../assets/images/portfolio/hidromovil1.jpg";
 import Hidromovil2 from "../assets/images/portfolio/hidromovil2.jpg";
 
+import { FaChevronCircleUp } from "react-icons/lib/fa";
+import ScrollUp from "./ScrollUp";
+
 class Portfolio extends React.Component {
 
   constructor (props) {
@@ -129,39 +132,39 @@ class Portfolio extends React.Component {
   render() {
     const { works } = this.state;
     return (
-      <div>
-          <section id="portfolio">
-            <div className="row">
-              <div className="twelve columns collapsed">
-                <div className="portfolio-title">
-                  <h2>Check out some of my works</h2>
-                </div>
-                <div id="portfolio-wrapper" className="">
-                  { works.map((element) => (
-                    <div className="portfolio-item" key={element.id}>
-                      <div className="item-wrap">
-                        { element.images.map((image, key) => (
-                          <img alt="" className="item-image" src={image} key={key}/>
-                        ))}
-                        <div className="portfolio-item-meta">
-                          <h2>{element.name}</h2>
-                          <p>{element.brief_description}</p>
-                          <p>{element.description}</p>
-                          <div className="portfolio-item-techs">
-                            {element.tech_icons && element.tech_icons[0]}
-                          </div>
+      <section id="portfolio">
+        <div className="row">
+          <div className="twelve columns collapsed">
+            <div className="portfolio-title">
+              <h2>Check out some of my works</h2>
+            </div>
+            <div id="portfolio-wrapper" className="">
+              { works.map((element, key) => (
+                <div className="portfolio-item" key={element.id}>
+                  {key < 3 && 
+                    <div className="item-wrap">
+                      { element.images.map((image, key) => (
+                        <img alt="" className="item-image" src={image} key={key}/>
+                      ))}
+                      <div className="portfolio-item-meta">
+                        <h2>{element.name}</h2>
+                        <p>{element.brief_description}</p>
+                        <p>{element.description}</p>
+                        <div className="portfolio-item-techs">
+                          {element.tech_icons && element.tech_icons[0]}
                         </div>
                       </div>
                     </div>
-                  ))}
+                  }
                 </div>
-              </div>
+              ))}
             </div>
-          </section>
-      </div>
+          </div>
+        </div>
+        <ScrollUp />
+      </section>
     )
   }
-
 };
 
 export default Portfolio;

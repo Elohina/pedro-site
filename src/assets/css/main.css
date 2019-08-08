@@ -1360,6 +1360,33 @@ ul#nav li.current a {
   padding-bottom: 30px;
 }
 
+#portfolio .scrolldown {
+  text-align: center;
+}
+
+
+
+#portfolio .scrolldown .smoothscroll {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  color: #303030;
+  border-radius: 100%;
+
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#portfolio .scrolldown a:hover {
+  color: #11abb0;
+}
+
 /* Portfolio Content */
 .portfolio-item .item-wrap {
   background: #fff;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ReactNativeSVG } from "./SVGIcons";
+import { ReactNativeSVG, SwiftSVG, ObjectiveCSVG  } from "./SVGIcons";
 
 import Debiphone from "../assets/images/portfolio/debiphone.png";
 import TheJetManager from "../assets/images/portfolio/thejetmanager.jpg";
@@ -54,7 +54,7 @@ class Portfolio extends React.Component {
           logo_version: false
         },
         {
-          id: 'bellbank',
+          id: 'bellbanking',
           brief_description: "Internet banking",
           name: "Bellbanking",
           key_words: "Objective-C, Swift, React Native",
@@ -63,6 +63,7 @@ class Portfolio extends React.Component {
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellbanking",
           url: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
           images: [Bellbanking1, Bellbanking2, Bellbanking3],
+          tech_icons: [<SwiftSVG />, <ObjectiveCSVG />, <ReactNativeSVG />],
           logo_version: false
         },
         {
@@ -75,6 +76,7 @@ class Portfolio extends React.Component {
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellclick",
           url: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
           images: [Bellclick1, Bellclick2, Bellclick3],
+          tech_icons: [<ObjectiveCSVG />],
           logo_version: false
         },
         {
@@ -84,7 +86,8 @@ class Portfolio extends React.Component {
           key_words: "Swift",
           description: "Bellchat is a telecommunications app that provides chat connections to the bank executives",
           images: [Bellchat],
-          logo_version: true
+          logo_version: true,
+          tech_icons: [<SwiftSVG />],
         },
         {
           id: 'wuelto',
@@ -93,13 +96,14 @@ class Portfolio extends React.Component {
           key_words: "Objective-C",
           description: "Wuelto is a marketplace-oriented app that includes more of a social aspect for example including features such as friends and group gifts",
           images: [Wuelto],
-          logo_version: true
+          logo_version: true,
+          tech_icons: [<ObjectiveCSVG />]
         },
         {
           id: 'thejetmanager',
           brief_description: "Flight manager",
           name: "The Jet Manager",
-          key_words: "Titanium, Appcelerator",
+          key_words: "Appcelerator Titanium",
           description: "The Jet Manager is an app made for flight attendants and administrators to provide some in-flight services and keep track of some of the airplane metrics like fuel consumptions",
           images: [TheJetManager],
           logo_version: true
@@ -108,7 +112,7 @@ class Portfolio extends React.Component {
           id: 'debiphone',
           brief_description: "Wallet",
           name: "Debiphone",
-          key_words: "Titanium, Appcelerator",
+          key_words: "Appcelerator Titanium",
           description: "Debiphone is a mobile wallet from which you can make online payments and transfers",
           images: [Debiphone],
           logo_version: true
@@ -156,7 +160,11 @@ class Portfolio extends React.Component {
                         <p>{element.brief_description}</p>
                         <p>{element.description}</p>
                         <div className="portfolio-item-techs">
-                          {element.tech_icons && element.tech_icons[0]}
+                          {element.tech_icons ? (element.tech_icons.map((icon)=>(
+                            <div className="svg-icon">{icon}</div>
+                          ))) : (
+                            <strong>{element.key_words}</strong>
+                          )}
                         </div>
                       </div>
                     </div>

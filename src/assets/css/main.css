@@ -1480,8 +1480,21 @@ ul#nav li.current a {
 }
 
 .portfolio-item .item-wrap .portfolio-item-meta .portfolio-item-techs {
-  max-width: 3em;
-  margin: 0 auto;
+  display: flex;
+  width: 55%;
+  height: auto;
+  position: relative;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px auto;
+}
+
+.svg-icon {
+  margin: 0 10px;
+}
+
+.svg-icon svg{
+  width: 70px;
 }
 /* on hover */
 .portfolio-item:hover .overlay {
@@ -1551,40 +1564,6 @@ ul#nav li.current a {
   display:block;
   margin:auto;
 }
-
-/* fadein/fadeout effect for modal popup
-/* ------------------------------------------------------------------ */
-
-/* content at start */
-/* .popup-modal {
-  opacity: 0;
-  -webkit-transition: all 200ms ease-in-out;
-  -moz-transition: all 200ms ease-in-out;
-  -o-transition: all 200ms ease-in-out;
-  -ms-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  pointer-events: none;
-} */
-/* content fadein */
-/* .popup-modal:target {
-  opacity: 1;
-  pointer-events: auto;
-  position: absolute;
-  left: 30.9%;
-} */
-
-/* .popup-modal > div {
-	width: 400px;
-	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
-} */
-/* content fadeout */
 
 /* ------------------------------------------------------------------ */
 /* f. Call To Action Section

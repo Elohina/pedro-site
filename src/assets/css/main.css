@@ -1456,6 +1456,11 @@ ul#nav li.current a {
   height: 450px;
   margin: 0 5px;
 }
+
+.portfolio-item .item-wrap img.item-logo-version {
+  height: 110px;
+}
+
 .portfolio-item .item-wrap .portfolio-item-meta {
   padding: 18px;
   margin: 30px auto;
@@ -2336,6 +2341,10 @@ footer .social li:first-child {
  #portfolio-wrapper .columns { margin-bottom: 40px; }
  #portfolio .item-wrap img {
   height: 300px;
+ }
+
+ #portfolio .item-wrap img.item-logo-version {
+  height: 110px;
  }
 
 

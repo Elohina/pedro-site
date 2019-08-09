@@ -17,8 +17,7 @@ import Bellnomina2 from "../assets/images/portfolio/bellnomina2.jpeg";
 import Hidromovil1 from "../assets/images/portfolio/hidromovil1.jpg";
 import Hidromovil2 from "../assets/images/portfolio/hidromovil2.jpg";
 
-import { FaChevronCircleUp } from "react-icons/lib/fa";
-import ScrollUp from "./Collapsible";
+import Collapsible from "./Collapsible";
 
 class Portfolio extends React.Component {
 
@@ -38,7 +37,8 @@ class Portfolio extends React.Component {
           androidUrl: "https://play.google.com/store/apps/details?id=es.inorca.hidromovil",
           url: "https://itunes.apple.com/gb/app/hidrom%C3%B3vil/id1294019966?mt=8",
           images: [Hidromovil1, Hidromovil2],
-          tech_icons: [<ReactNativeSVG />]
+          tech_icons: [<ReactNativeSVG />],
+          logo_version: false
         },
         {
           id: 'bellnomina',
@@ -50,7 +50,8 @@ class Portfolio extends React.Component {
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellnomina",
           url: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
           images: [Bellnomina1, Bellnomina2],
-          tech_icons: [<ReactNativeSVG />]
+          tech_icons: [<ReactNativeSVG />],
+          logo_version: false
         },
         {
           id: 'bellbank',
@@ -61,7 +62,8 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellbanking",
           url: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
-          images: [Bellbanking1, Bellbanking2, Bellbanking3]
+          images: [Bellbanking1, Bellbanking2, Bellbanking3],
+          logo_version: false
         },
         {
           id: 'bellclick',
@@ -73,7 +75,7 @@ class Portfolio extends React.Component {
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellclick",
           url: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
           images: [Bellclick1, Bellclick2, Bellclick3],
-
+          logo_version: false
         },
         {
           id: 'bellchat',
@@ -81,7 +83,8 @@ class Portfolio extends React.Component {
           name: "Bellchat",
           key_words: "Swift",
           description: "Bellchat is a telecommunications app that provides chat connections to the bank executives",
-          images: [Bellchat]
+          images: [Bellchat],
+          logo_version: true
         },
         {
           id: 'wuelto',
@@ -89,7 +92,8 @@ class Portfolio extends React.Component {
           name: "Wuelto",
           key_words: "Objective-C",
           description: "Wuelto is a marketplace-oriented app that includes more of a social aspect for example including features such as friends and group gifts",
-          images: [Wuelto]
+          images: [Wuelto],
+          logo_version: true
         },
         {
           id: 'thejetmanager',
@@ -97,7 +101,8 @@ class Portfolio extends React.Component {
           name: "The Jet Manager",
           key_words: "Titanium, Appcelerator",
           description: "The Jet Manager is an app made for flight attendants and administrators to provide some in-flight services and keep track of some of the airplane metrics like fuel consumptions",
-          images: [TheJetManager]
+          images: [TheJetManager],
+          logo_version: true
         },
         {
           id: 'debiphone',
@@ -105,7 +110,8 @@ class Portfolio extends React.Component {
           name: "Debiphone",
           key_words: "Titanium, Appcelerator",
           description: "Debiphone is a mobile wallet from which you can make online payments and transfers",
-          images: [Debiphone]
+          images: [Debiphone],
+          logo_version: true
         },
       ]
     };
@@ -137,7 +143,11 @@ class Portfolio extends React.Component {
                       { element.images
                         .map(
                           (image, key) => (
-                            <img alt={`Screenshot of ${element.name} app`} className="item-image" src={image} key={key}/>
+                            <img
+                              alt={`Screenshot of ${element.name} app`}
+                              className={`item-image ${element.logo_version ? 'item-logo-version' : ''}`}
+                              src={image}
+                              key={key}/>
                           )
                         )
                       }
@@ -156,7 +166,7 @@ class Portfolio extends React.Component {
             </div>
           </div>
         </div>
-        <ScrollUp onClick={this.handleSeeMoreJobs} isOpen={isOpen}/>
+        <Collapsible onClick={this.handleSeeMoreJobs} isOpen={isOpen}/>
       </section>
     )
   }

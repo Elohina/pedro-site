@@ -13,7 +13,7 @@ import Hidromovil1 from "../assets/images/portfolio/hidromovil1.jpg";
 import Hidromovil2 from "../assets/images/portfolio/hidromovil2.jpg";
 
 import { FaChevronCircleUp } from "react-icons/lib/fa";
-import ScrollUp from "./ScrollUp";
+import ScrollUp from "./Collapsible";
 
 class Portfolio extends React.Component {
 
@@ -129,8 +129,15 @@ class Portfolio extends React.Component {
     });
   }
 
+  handleSeeMoreJobs = () => {
+    const { isOpen } = this.state;
+    this.setState({
+      isOpen: !isOpen
+    });
+  }
+
   render() {
-    const { works } = this.state;
+    const { works, isOpen } = this.state;
     return (
       <section id="portfolio">
         <div className="row">
@@ -138,13 +145,28 @@ class Portfolio extends React.Component {
             <div className="portfolio-title">
               <h2>Check out some of my works</h2>
             </div>
-            <div id="portfolio-wrapper" className="">
+            <div id="portfolio-wrapper" className={isOpen && "section-collapsible"}>
               { works.map((element, key) => (
                 <div className="portfolio-item" key={element.id}>
-                  {key < 3 && 
+                  {key < 3 &&
                     <div className="item-wrap">
                       { element.images.map((image, key) => (
-                        <img alt="" className="item-image" src={image} key={key}/>
+                        <img alt={`Screenshot of ${element.name} app`} className="item-image" src={image} key={key}/>
+                      ))}
+                      <div className="portfolio-item-meta">
+                        <h2>{element.name}</h2>
+                        <p>{element.brief_description}</p>
+                        <p>{element.description}</p>
+                        <div className="portfolio-item-techs">
+                          {element.tech_icons && element.tech_icons[0]}
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  { isOpen && key >= 3 &&
+                    <div className="item-wrap">
+                      { element.images.map((image, key) => (
+                        <img alt={`Screenshot of ${element.name} app`} className="item-image" src={image} key={key}/>
                       ))}
                       <div className="portfolio-item-meta">
                         <h2>{element.name}</h2>
@@ -161,7 +183,7 @@ class Portfolio extends React.Component {
             </div>
           </div>
         </div>
-        <ScrollUp />
+        <ScrollUp onClick={this.handleSeeMoreJobs} isOpen={isOpen}/>
       </section>
     )
   }

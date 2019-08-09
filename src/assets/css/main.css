@@ -837,8 +837,7 @@ body {
 
 header {
   position: relative;
-  height: 800px;
-  min-height: 500px;
+  height: 100vh;
   width: 100%;
   /* background: #161415 url(../images/header-background.jpg) no-repeat top center; */
   background-size: cover !important;
@@ -1385,6 +1384,14 @@ ul#nav li.current a {
 }
 #portfolio .scrolldown a:hover {
   color: #11abb0;
+  cursor: pointer;
+}
+
+#portfolio #portfolio-wrapper.section-collapsible {
+  -webkit-transition: max-height 0.3s ease-out;
+  -moz-transition: max-height 0.3s ease-out;
+  -o-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
 }
 
 /* Portfolio Content */

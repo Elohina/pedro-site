@@ -5,10 +5,15 @@ import { ReactNativeSVG } from "./SVGIcons";
 import Debiphone from "../assets/images/portfolio/debiphone.png";
 import TheJetManager from "../assets/images/portfolio/thejetmanager.jpg";
 import Wuelto from "../assets/images/portfolio/wuelto2.png";
-import Bellbanking from "../assets/images/portfolio/bellbanking2.png";
-import Bellclick from "../assets/images/portfolio/bellclick.jpg"
+import Bellbanking1 from "../assets/images/portfolio/bellbanking1.jpeg";
+import Bellbanking2 from "../assets/images/portfolio/bellbanking2.jpeg";
+import Bellbanking3 from "../assets/images/portfolio/bellbanking3.jpeg";
+import Bellclick1 from "../assets/images/portfolio/bellclick1.jpg"
+import Bellclick2 from "../assets/images/portfolio/bellclick2.jpg"
+import Bellclick3 from "../assets/images/portfolio/bellclick3.jpg"
 import Bellchat from "../assets/images/portfolio/bellchat.png";
-import Bellnomina from "../assets/images/portfolio/prestamos_bellnomina3.png";
+import Bellnomina1 from "../assets/images/portfolio/bellnomina1.jpeg";
+import Bellnomina2 from "../assets/images/portfolio/bellnomina2.jpeg";
 import Hidromovil1 from "../assets/images/portfolio/hidromovil1.jpg";
 import Hidromovil2 from "../assets/images/portfolio/hidromovil2.jpg";
 
@@ -20,8 +25,8 @@ class Portfolio extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      currentModal: null,
       isOpen: false,
+      showItemsNumber: 3,
       works: [
         {
           id: 'hidromovil',
@@ -44,20 +49,8 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellnomina",
           url: "https://itunes.apple.com/us/app/pr%C3%A9stamos-bellnomina/id1305914525?mt=8",
-          images: [Bellnomina],
+          images: [Bellnomina1, Bellnomina2],
           tech_icons: [<ReactNativeSVG />]
-        },
-        {
-          id: 'bellclick',
-          brief_description: "Telecommunications",
-          name: "Bellclick",
-          key_words: "Objective-C",
-          description: "Bellclick is a telecommunications app that provides voice and video connections to the bank executives",
-          iosUrl: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
-          androidUrl: "https://play.google.com/store/apps/details?id=com.bellclick",
-          url: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
-          images: [Bellclick],
-
         },
         {
           id: 'bellbank',
@@ -68,7 +61,19 @@ class Portfolio extends React.Component {
           iosUrl: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
           androidUrl: "https://play.google.com/store/apps/details?id=com.bellbank.bellbanking",
           url: "https://itunes.apple.com/us/app/bellbanking/id1135864593?mt=8",
-          images: [Bellbanking]
+          images: [Bellbanking1, Bellbanking2, Bellbanking3]
+        },
+        {
+          id: 'bellclick',
+          brief_description: "Telecommunications",
+          name: "Bellclick",
+          key_words: "Objective-C",
+          description: "Bellclick is a telecommunications app that provides voice and video connections to the bank executives",
+          iosUrl: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
+          androidUrl: "https://play.google.com/store/apps/details?id=com.bellclick",
+          url: "https://itunes.apple.com/us/app/bellclick/id1110464795?mt=8",
+          images: [Bellclick1, Bellclick2, Bellclick3],
+
         },
         {
           id: 'bellchat',
@@ -107,37 +112,16 @@ class Portfolio extends React.Component {
 
   }
 
-  toggleModal = key => event => {
-    event.preventDefault();
-    if (this.state.currentModal) {
-      this.handleModalCloseRequest();
-      return;
-    }
-
-    this.setState({
-      ...this.state,
-      currentModal: key,
-      isOpen: true
-    });
-  }
-
-  handleModalCloseRequest = () => {
-    this.setState({
-      ...this.state,
-      currentModal: null,
-      isOpen: false
-    });
-  }
-
   handleSeeMoreJobs = () => {
-    const { isOpen } = this.state;
+    const { isOpen, works } = this.state;
     this.setState({
-      isOpen: !isOpen
+      isOpen: !isOpen,
+      showItemsNumber: !isOpen ? works.length : 3
     });
   }
 
   render() {
-    const { works, isOpen } = this.state;
+    const { works, isOpen, showItemsNumber } = this.state;
     return (
       <section id="portfolio">
         <div className="row">
@@ -148,26 +132,15 @@ class Portfolio extends React.Component {
             <div id="portfolio-wrapper" className={isOpen && "section-collapsible"}>
               { works.map((element, key) => (
                 <div className="portfolio-item" key={element.id}>
-                  {key < 3 &&
+                  {key < showItemsNumber &&
                     <div className="item-wrap">
-                      { element.images.map((image, key) => (
-                        <img alt={`Screenshot of ${element.name} app`} className="item-image" src={image} key={key}/>
-                      ))}
-                      <div className="portfolio-item-meta">
-                        <h2>{element.name}</h2>
-                        <p>{element.brief_description}</p>
-                        <p>{element.description}</p>
-                        <div className="portfolio-item-techs">
-                          {element.tech_icons && element.tech_icons[0]}
-                        </div>
-                      </div>
-                    </div>
-                  }
-                  { isOpen && key >= 3 &&
-                    <div className="item-wrap">
-                      { element.images.map((image, key) => (
-                        <img alt={`Screenshot of ${element.name} app`} className="item-image" src={image} key={key}/>
-                      ))}
+                      { element.images
+                        .map(
+                          (image, key) => (
+                            <img alt={`Screenshot of ${element.name} app`} className="item-image" src={image} key={key}/>
+                          )
+                        )
+                      }
                       <div className="portfolio-item-meta">
                         <h2>{element.name}</h2>
                         <p>{element.brief_description}</p>

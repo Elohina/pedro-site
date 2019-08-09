@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Pedro Valdivieso",
     author: "Elohina Guevara",
-    description: "Personal site"
+    description: "Pedro Veldivieso personal site"
   },
   pathPrefix: "/",
   plugins: [

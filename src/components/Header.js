@@ -6,13 +6,11 @@ import Banner from "./Banner";
 import ScrollDown from "./ScrollDown";
 
 const Header = () => (
-  <ScrollableAnchor id={'home'}>
-    <header id="home">
-      <Navigation />
-      <Banner />
-      <ScrollDown />
-    </header>
-  </ScrollableAnchor>
+  <header id="home">
+    <Navigation />
+    <Banner />
+    <ScrollDown />
+  </header>
 );
 
 export default Header;

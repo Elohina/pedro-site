@@ -1,8 +1,5 @@
 import React from "react";
 import { FaCloudDownload } from "react-icons/lib/fa";
-import ScrollableAnchor from "react-scrollable-anchor";
-
-import profilePic from "../assets/images/profilepic.jpg";
 
 const About = () => (
     <section id="about">

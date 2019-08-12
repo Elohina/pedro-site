@@ -165,7 +165,6 @@ h3 { font-size: 22px; line-height: 30px; margin-bottom: 12px; }
 h4 { font-size: 20px; line-height: 30px; margin-bottom: 6px; }
 h5 { font-size: 18px; line-height: 30px; }
 h6 { font-size: 14px; line-height: 30px; }
-.subheader { }
 
 p { margin: 0 0 30px 0; }
 p img { margin: 0; }
@@ -309,8 +308,6 @@ ol ol, ol ul { margin: 6px 0 6px 30px; }
 ul ul li, ul ol li,
 ol ol li, ol ul li { margin-bottom: 6px; }
 li { line-height: 18px; margin-bottom: 12px; }
-ul.large li { }
-li p { }
 
 /* ---------------------------------------------------------------------
 /*  Stats Tab Markup
@@ -393,13 +390,13 @@ dd { margin: 0 0 0 20px; }
 	counter-increment: definitions;
 }
 .dictionary-style dd:before {
-  .pagination {
-	content: counter(definitions, decimal) ". ";
+  content: counter(definitions, decimal) ". ";
 }
 
 /* Pagination */
-   margin: 36px auto;
-   text-align: center;
+.pagination {
+  margin: 36px auto;
+  text-align: center;
 }
 .pagination ul li {
    display: inline-block;
@@ -875,7 +872,7 @@ header .banner-text h1 {
   margin-top: 20%
 }
 header .banner-text h2 {
-  font: 22px/1.9em 'Open Sans', sans-serif;
+  font: 24px/1.9em 'Raleway', sans-serif;
   color: #fff;
   margin: 0 auto;
   width: 70%;
@@ -966,7 +963,7 @@ header .banner .headline-container {
 
 /* nav-wrap */
 #nav-wrap {
-  font: 12px 'Raleway', sans-serif;
+  font: 12px 'Open Sans', sans-serif;
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -1055,7 +1052,8 @@ ul#nav li.current a {
 }
 #about p {
   line-height: 30px;
-  color: #7a7a7a;
+  color: #1a1a1a;
+  font-size: 18px;
 }
 #about .profile-pic {
   position: relative;
@@ -1474,7 +1472,7 @@ ul#nav li.current a {
 }
 
 .portfolio-item .item-wrap .portfolio-item-meta p {
-  font: 16px/22px 'Open Sans', sans-serif;
+  font: 18px/22px 'Open Sans', sans-serif;
   margin-bottom: 0;
   color: #191919;
 }
@@ -2285,6 +2283,10 @@ footer .social li:first-child {
     padding: 15px 20px;
  }
  #about .main-col { padding-right: 30px; }
+
+ #about p {
+  font-size: 16px;
+ }
 
 
  /* Resume Section

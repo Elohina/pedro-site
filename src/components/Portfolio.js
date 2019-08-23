@@ -140,18 +140,18 @@ class Portfolio extends React.Component {
               <h2>Check out some of my works</h2>
             </div>
             <div id="portfolio-wrapper" className={isOpen && "section-collapsible"}>
-              { works.map((element, key) => (
+              { works.map((element, element_key) => (
                 <div className="portfolio-item" key={element.id}>
-                  {key < showItemsNumber &&
+                  {element_key < showItemsNumber &&
                     <div className="item-wrap">
                       { element.images
                         .map(
-                          (image, key) => (
+                          (image, img_key) => (
                             <img
                               alt={`Screenshot of ${element.name} app`}
                               className={`item-image ${element.logo_version ? 'item-logo-version' : ''}`}
                               src={image}
-                              key={key}/>
+                              key={img_key}/>
                           )
                         )
                       }
@@ -160,8 +160,8 @@ class Portfolio extends React.Component {
                         <p>{element.brief_description}</p>
                         <p>{element.description}</p>
                         <div className="portfolio-item-techs">
-                          {element.tech_icons ? (element.tech_icons.map((icon)=>(
-                            <div className="svg-icon">{icon}</div>
+                          {element.tech_icons ? (element.tech_icons.map((icon, svg_key)=>(
+                            <div className="svg-icon" key={`${element.id}-svg-icon-${svg_key}`}>{icon}</div>
                           ))) : (
                             <strong>{element.key_words}</strong>
                           )}

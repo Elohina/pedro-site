@@ -20,7 +20,10 @@ const About = () => (
         myself very passionate about my job and I’m always looking for opportunities
         to learn new things and to be a better professional.
         </p>
-        <a href="" className="button">
+        <a href="https://s3.amazonaws.com/pedrovaldivieso.com/Pedro+Valdivieso+-+Curriculum+vitae.pdf"
+           className="button"
+           target="_blank"
+           rel="noopener">
           <FaCloudDownload /> Download Resume
         </a>
       </div>

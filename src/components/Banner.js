@@ -1,11 +1,16 @@
 import React from "react";
 import SocialLinks from "./SocialLinks";
-import image from "../assets/images/header-background.png";
+import image_big from "../assets/images/header-background_600.png";
+import image_small from "../assets/images/header-background_480.png";
 
 const Banner = () => (
   <div className="row banner">
     <div className="six columns headline-image">
-      <img src={image} alt="Photo of Pedro"/>
+      <picture>
+        <source srcSet={`${image_small} 480w, ${image_big} 600w`}/>
+        <img srcSet={`${image_small}`} alt="Photo of Pedro"/>
+      </picture>
+
     </div>
     <div className="six columns banner-text headline-container">
       <h1 className="responsive-headline">Hi, I'm Pedro.</h1>
